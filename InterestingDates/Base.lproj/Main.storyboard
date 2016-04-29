@@ -1,25 +1,96 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e79-cL-IX4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Birthdays-->
+        <scene sceneID="nfd-fH-b47">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Birthdays" id="Pxe-O6-wqC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="eZH-Ja-5Ja"/>
+                        <viewControllerLayoutGuide type="bottom" id="rQv-nN-fqM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="Eh9-rd-Noq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tL7-ar-Pkd">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Birthdays" id="uTy-SC-bmA"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="tL7-ar-Pkd" secondAttribute="trailing" constant="-20" id="3Gh-Ei-fmX"/>
+                            <constraint firstItem="tL7-ar-Pkd" firstAttribute="top" secondItem="Eh9-rd-Noq" secondAttribute="topMargin" id="hLw-4i-caI"/>
+                            <constraint firstItem="tL7-ar-Pkd" firstAttribute="leading" secondItem="Eh9-rd-Noq" secondAttribute="leadingMargin" constant="-20" id="qUf-Tp-UrC"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Birthdays" image="Birthdays" id="pkf-GP-Kxn"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jkw-xK-vhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="482" y="896"/>
+        </scene>
+        <!--Holidays-->
+        <scene sceneID="P8t-SY-z1P">
+            <objects>
+                <viewController title="Holidays" id="aIt-j6-cG2" customClass="IDDateDetailViewController" customModule="InterestingDates" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IpK-Kv-PpJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="w7y-oZ-dVe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VtA-fP-zYS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJt-gZ-fvq">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Holidays" id="zDK-Lf-5F4"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qJt-gZ-fvq" firstAttribute="top" secondItem="VtA-fP-zYS" secondAttribute="topMargin" id="L38-L9-3YM"/>
+                            <constraint firstItem="qJt-gZ-fvq" firstAttribute="leading" secondItem="VtA-fP-zYS" secondAttribute="leadingMargin" constant="-20" id="LMt-kR-u1A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qJt-gZ-fvq" secondAttribute="trailing" constant="-20" id="LWF-9X-hcc"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Holidays" image="Holidays" id="Ir4-gz-llj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iBY-kK-bJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="482" y="235"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="9Ge-KB-D4Z">
+            <objects>
+                <tabBarController id="e79-cL-IX4" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ba7-qU-EnY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="aIt-j6-cG2" kind="relationship" relationship="viewControllers" id="7pf-wP-nLN"/>
+                        <segue destination="Pxe-O6-wqC" kind="relationship" relationship="viewControllers" id="75I-VT-7jK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R7a-mx-2d6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-338" y="566"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Birthdays" width="26" height="28"/>
+        <image name="Holidays" width="26" height="28"/>
+    </resources>
 </document>
