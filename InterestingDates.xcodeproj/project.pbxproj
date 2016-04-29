@@ -11,6 +11,11 @@
 		77213F951CD412EE005CB32B /* AAABirthdayMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77213F911CD412EE005CB32B /* AAABirthdayMO.swift */; };
 		77213F961CD412EE005CB32B /* AAAHolidayMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77213F921CD412EE005CB32B /* AAAHolidayMO+CoreDataProperties.swift */; };
 		77213F971CD412EE005CB32B /* AAAHolidayMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77213F931CD412EE005CB32B /* AAAHolidayMO.swift */; };
+		77213F9A1CD414DC005CB32B /* IDAddDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77213F991CD414DC005CB32B /* IDAddDateViewController.swift */; };
+		77213F9C1CD41557005CB32B /* IDCoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77213F9B1CD41557005CB32B /* IDCoreDataController.swift */; };
+		77213F9E1CD41584005CB32B /* IDDateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77213F9D1CD41584005CB32B /* IDDateDetailViewController.swift */; };
+		77213FA01CD416E6005CB32B /* IDDateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77213F9F1CD416E6005CB32B /* IDDateTableViewController.swift */; };
+		77213FA21CD41724005CB32B /* IDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77213FA11CD41724005CB32B /* IDTableViewCell.swift */; };
 		77C490841CD40473007283B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C490831CD40473007283B8 /* AppDelegate.swift */; };
 		77C490861CD40473007283B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C490851CD40473007283B8 /* ViewController.swift */; };
 		77C490891CD40473007283B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77C490871CD40473007283B8 /* Main.storyboard */; };
@@ -26,6 +31,11 @@
 		77213F911CD412EE005CB32B /* AAABirthdayMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAABirthdayMO.swift; sourceTree = "<group>"; };
 		77213F921CD412EE005CB32B /* AAAHolidayMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AAAHolidayMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		77213F931CD412EE005CB32B /* AAAHolidayMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAAHolidayMO.swift; sourceTree = "<group>"; };
+		77213F991CD414DC005CB32B /* IDAddDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDAddDateViewController.swift; sourceTree = "<group>"; };
+		77213F9B1CD41557005CB32B /* IDCoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDCoreDataController.swift; sourceTree = "<group>"; };
+		77213F9D1CD41584005CB32B /* IDDateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDDateDetailViewController.swift; sourceTree = "<group>"; };
+		77213F9F1CD416E6005CB32B /* IDDateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDDateTableViewController.swift; sourceTree = "<group>"; };
+		77213FA11CD41724005CB32B /* IDTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDTableViewCell.swift; sourceTree = "<group>"; };
 		77C490801CD40473007283B8 /* InterestingDates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterestingDates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77C490831CD40473007283B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77C490851CD40473007283B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,7 +77,7 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		77213F8F1CD412DD005CB32B /* Models */ = {
+		77213F8F1CD412DD005CB32B /* Core Data Models */ = {
 			isa = PBXGroup;
 			children = (
 				77213F901CD412EE005CB32B /* AAABirthdayMO+CoreDataProperties.swift */,
@@ -75,7 +85,7 @@
 				77213F921CD412EE005CB32B /* AAAHolidayMO+CoreDataProperties.swift */,
 				77213F931CD412EE005CB32B /* AAAHolidayMO.swift */,
 			);
-			name = Models;
+			name = "Core Data Models";
 			sourceTree = "<group>";
 		};
 		77C490771CD40473007283B8 = {
@@ -99,7 +109,12 @@
 		77C490821CD40473007283B8 /* InterestingDates */ = {
 			isa = PBXGroup;
 			children = (
-				77213F8F1CD412DD005CB32B /* Models */,
+				77213F8F1CD412DD005CB32B /* Core Data Models */,
+				77213F991CD414DC005CB32B /* IDAddDateViewController.swift */,
+				77213F9B1CD41557005CB32B /* IDCoreDataController.swift */,
+				77213F9D1CD41584005CB32B /* IDDateDetailViewController.swift */,
+				77213F9F1CD416E6005CB32B /* IDDateTableViewController.swift */,
+				77213FA11CD41724005CB32B /* IDTableViewCell.swift */,
 				77C490831CD40473007283B8 /* AppDelegate.swift */,
 				77C490851CD40473007283B8 /* ViewController.swift */,
 				77C490871CD40473007283B8 /* Main.storyboard */,
@@ -234,9 +249,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				77213F971CD412EE005CB32B /* AAAHolidayMO.swift in Sources */,
+				77213F9C1CD41557005CB32B /* IDCoreDataController.swift in Sources */,
+				77213FA01CD416E6005CB32B /* IDDateTableViewController.swift in Sources */,
 				77213F961CD412EE005CB32B /* AAAHolidayMO+CoreDataProperties.swift in Sources */,
+				77213FA21CD41724005CB32B /* IDTableViewCell.swift in Sources */,
 				77C490861CD40473007283B8 /* ViewController.swift in Sources */,
+				77213F9A1CD414DC005CB32B /* IDAddDateViewController.swift in Sources */,
 				77C490841CD40473007283B8 /* AppDelegate.swift in Sources */,
+				77213F9E1CD41584005CB32B /* IDDateDetailViewController.swift in Sources */,
 				77213F941CD412EE005CB32B /* AAABirthdayMO+CoreDataProperties.swift in Sources */,
 				77213F951CD412EE005CB32B /* AAABirthdayMO.swift in Sources */,
 				77C4908C1CD40473007283B8 /* InterestingDates.xcdatamodeld in Sources */,
