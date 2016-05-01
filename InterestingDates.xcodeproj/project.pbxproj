@@ -12,7 +12,6 @@
 		77213F961CD412EE005CB32B /* AAAHolidayMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77213F921CD412EE005CB32B /* AAAHolidayMO+CoreDataProperties.swift */; };
 		77213F971CD412EE005CB32B /* AAAHolidayMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77213F931CD412EE005CB32B /* AAAHolidayMO.swift */; };
 		77213F9A1CD414DC005CB32B /* IDAddDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77213F991CD414DC005CB32B /* IDAddDateViewController.swift */; };
-		77213F9C1CD41557005CB32B /* IDCoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77213F9B1CD41557005CB32B /* IDCoreDataController.swift */; };
 		77213F9E1CD41584005CB32B /* IDDateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77213F9D1CD41584005CB32B /* IDDateDetailViewController.swift */; };
 		77213FA01CD416E6005CB32B /* IDDateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77213F9F1CD416E6005CB32B /* IDDateTableViewController.swift */; };
 		77213FA21CD41724005CB32B /* IDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77213FA11CD41724005CB32B /* IDTableViewCell.swift */; };
@@ -32,7 +31,6 @@
 		77213F921CD412EE005CB32B /* AAAHolidayMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AAAHolidayMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		77213F931CD412EE005CB32B /* AAAHolidayMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAAHolidayMO.swift; sourceTree = "<group>"; };
 		77213F991CD414DC005CB32B /* IDAddDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDAddDateViewController.swift; sourceTree = "<group>"; };
-		77213F9B1CD41557005CB32B /* IDCoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDCoreDataController.swift; sourceTree = "<group>"; };
 		77213F9D1CD41584005CB32B /* IDDateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDDateDetailViewController.swift; sourceTree = "<group>"; };
 		77213F9F1CD416E6005CB32B /* IDDateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDDateTableViewController.swift; sourceTree = "<group>"; };
 		77213FA11CD41724005CB32B /* IDTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 			children = (
 				77213F8F1CD412DD005CB32B /* Core Data Models */,
 				77213F991CD414DC005CB32B /* IDAddDateViewController.swift */,
-				77213F9B1CD41557005CB32B /* IDCoreDataController.swift */,
 				77213F9D1CD41584005CB32B /* IDDateDetailViewController.swift */,
 				77213F9F1CD416E6005CB32B /* IDDateTableViewController.swift */,
 				77213FA11CD41724005CB32B /* IDTableViewCell.swift */,
@@ -249,7 +246,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				77213F971CD412EE005CB32B /* AAAHolidayMO.swift in Sources */,
-				77213F9C1CD41557005CB32B /* IDCoreDataController.swift in Sources */,
 				77213FA01CD416E6005CB32B /* IDDateTableViewController.swift in Sources */,
 				77213F961CD412EE005CB32B /* AAAHolidayMO+CoreDataProperties.swift in Sources */,
 				77213FA21CD41724005CB32B /* IDTableViewCell.swift in Sources */,

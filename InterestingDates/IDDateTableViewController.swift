@@ -7,89 +7,109 @@
 //
 
 import UIKit
+import CoreData
 
 class IDDateTableViewController: UITableViewController {
-
+    // MARK: Properties
+    var dates: NSArray!
+    var entityName: String!
+    var dateFormatter: NSDateFormatter!
+    var managedObjectContext: NSManagedObjectContext!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.managedObjectContext = appDelegate.newManagedObjectContext
+        self.dateFormatter = NSDateFormatter()
+        self.dateFormatter.timeZone = NSTimeZone(name: "PST")
+        self.dateFormatter.dateStyle = .MediumStyle
+        
+        loadRecordsFromCoreData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
+    
 
-    // MARK: - Table view data source
+    // MARK: Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.dates.count
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
+    
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
-
-    /*
-    // Override to support editing the table view.
+    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let date = dates[indexPath.row]
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let managedContext = appDelegate.newManagedObjectContext
+            do {
+                managedContext.deleteObject(date as! NSManagedObject)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                try managedContext.save()
+                loadRecordsFromCoreData()
+                self.tableView.reloadData()
+            } catch let error as NSError  {
+                print("Could not save \(error), \(error.userInfo)")
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell: IDTableViewCell = IDTableViewCell()
+        
+        if self.entityName == "Holiday" {
+            cell = tableView.dequeueReusableCellWithIdentifier("HolidayCell") as! IDTableViewCell
+            let holiday = self.dates.objectAtIndex(indexPath.row) as! AAAHolidayMO
+            cell.nameLabel.text = holiday.name
+            cell.dateLabel.text = self.dateFormatter.stringFromDate(holiday.date!)
+            if (holiday.image != nil) {
+                let image = UIImage(data: holiday.image!)
+                cell.photoView.image = image
+            } else {
+                cell.photoView.image = nil
+            }
+        } else { //Birthday
+            cell = tableView.dequeueReusableCellWithIdentifier("BirthdayCell") as! IDTableViewCell
+            let birthday = self.dates.objectAtIndex(indexPath.row) as! AAABirthdayMO
+            cell.nameLabel.text = birthday.name
+            cell.dateLabel.text = self.dateFormatter.stringFromDate(birthday.date!)
+            if (birthday.image != nil) {
+                let image = UIImage(data: birthday.image!)
+                cell.photoView.image = image
+            } else {
+                cell.photoView.image = nil
+            }
+        }
+        
+        return cell
     }
-    */
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    // MARK: Private methods
+    
+    private func loadRecordsFromCoreData() {
+        self.managedObjectContext.performBlockAndWait { 
+            self.managedObjectContext.reset()
+            let request = NSFetchRequest(entityName: self.entityName)
+            let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+            request.sortDescriptors = [sortDescriptor]
+            do {
+                self.dates = try self.managedObjectContext.executeFetchRequest(request)
+            } catch let error as NSError {
+                print("Could not fetch \(error), \(error.userInfo)")
+            }
+        }
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

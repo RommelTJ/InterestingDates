@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -41,7 +42,7 @@
         <!--Holidays-->
         <scene sceneID="P8t-SY-z1P">
             <objects>
-                <viewController title="Holidays" id="aIt-j6-cG2" customClass="IDDateDetailViewController" customModule="InterestingDates" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Holidays" id="aIt-j6-cG2" customClass="IDDateTableViewController" customModule="InterestingDates" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IpK-Kv-PpJ"/>
                         <viewControllerLayoutGuide type="bottom" id="w7y-oZ-dVe"/>
@@ -53,15 +54,76 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJt-gZ-fvq">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Holidays" id="zDK-Lf-5F4"/>
+                                    <navigationItem title="Holidays" id="zDK-Lf-5F4">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="diD-I6-mwN"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ku9-he-oB4">
+                                <rect key="frame" x="0.0" y="44" width="600" height="507"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HolidayCell" rowHeight="74" id="5AC-KL-D7f" customClass="IDTableViewCell" customModule="InterestingDates" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="74"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5AC-KL-D7f" id="At3-3Z-zsd">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="73.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KgF-9p-eb8">
+                                                    <rect key="frame" x="8" y="8" width="57.5" height="57.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="KgF-9p-eb8" secondAttribute="height" multiplier="1:1" id="ZiY-7e-Oif"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Christmas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIp-Ot-eKM">
+                                                    <rect key="frame" x="73" y="8" width="486" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/31/16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIE-b0-vvC">
+                                                    <rect key="frame" x="73" y="37" width="486" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QIp-Ot-eKM" firstAttribute="leading" secondItem="KgF-9p-eb8" secondAttribute="trailing" constant="7.5" id="3Nz-a3-aZH"/>
+                                                <constraint firstItem="QIp-Ot-eKM" firstAttribute="top" secondItem="At3-3Z-zsd" secondAttribute="topMargin" id="IU8-eW-lSg"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="HIE-b0-vvC" secondAttribute="trailing" id="Ncf-M0-73p"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="KgF-9p-eb8" secondAttribute="bottom" id="XcD-oz-FG3"/>
+                                                <constraint firstItem="KgF-9p-eb8" firstAttribute="top" secondItem="At3-3Z-zsd" secondAttribute="topMargin" id="XyS-hZ-i16"/>
+                                                <constraint firstItem="HIE-b0-vvC" firstAttribute="top" secondItem="QIp-Ot-eKM" secondAttribute="bottom" constant="8" id="co8-cG-6Li"/>
+                                                <constraint firstItem="QIp-Ot-eKM" firstAttribute="trailing" secondItem="At3-3Z-zsd" secondAttribute="trailingMargin" id="kVe-N1-wpi"/>
+                                                <constraint firstItem="HIE-b0-vvC" firstAttribute="leading" secondItem="KgF-9p-eb8" secondAttribute="trailing" constant="7.5" id="lKF-Gr-nkd"/>
+                                                <constraint firstItem="KgF-9p-eb8" firstAttribute="leading" secondItem="At3-3Z-zsd" secondAttribute="leadingMargin" id="tfM-Z9-yPC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="HIE-b0-vvC" id="KOx-a7-czR"/>
+                                            <outlet property="imageView" destination="At3-3Z-zsd" id="Bl9-ly-6gx"/>
+                                            <outlet property="nameLabel" destination="QIp-Ot-eKM" id="POr-rm-EMh"/>
+                                            <outlet property="photoView" destination="KgF-9p-eb8" id="mq7-LZ-ggz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="aIt-j6-cG2" id="pW5-1C-LDa"/>
+                                    <outlet property="delegate" destination="aIt-j6-cG2" id="a77-EW-fyu"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ku9-he-oB4" firstAttribute="leading" secondItem="VtA-fP-zYS" secondAttribute="leadingMargin" constant="-20" id="Eez-2F-V6G"/>
+                            <constraint firstItem="ku9-he-oB4" firstAttribute="top" secondItem="qJt-gZ-fvq" secondAttribute="bottom" id="GTt-f6-02e"/>
                             <constraint firstItem="qJt-gZ-fvq" firstAttribute="top" secondItem="VtA-fP-zYS" secondAttribute="topMargin" id="L38-L9-3YM"/>
                             <constraint firstItem="qJt-gZ-fvq" firstAttribute="leading" secondItem="VtA-fP-zYS" secondAttribute="leadingMargin" constant="-20" id="LMt-kR-u1A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qJt-gZ-fvq" secondAttribute="trailing" constant="-20" id="LWF-9X-hcc"/>
+                            <constraint firstItem="w7y-oZ-dVe" firstAttribute="top" secondItem="ku9-he-oB4" secondAttribute="bottom" id="Rep-ku-IEh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ku9-he-oB4" secondAttribute="trailing" constant="-20" id="yT7-6M-5Xk"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Holidays" image="Holidays" id="Ir4-gz-llj"/>
