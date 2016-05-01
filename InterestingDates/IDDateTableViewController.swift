@@ -9,12 +9,13 @@
 import UIKit
 import CoreData
 
-class IDDateTableViewController: UITableViewController {
+class IDDateTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: Properties
     var dates: NSArray!
     var entityName: String!
     var dateFormatter: NSDateFormatter!
     var managedObjectContext: NSManagedObjectContext!
+    @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
@@ -37,19 +38,19 @@ class IDDateTableViewController: UITableViewController {
 
     // MARK: Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dates.count
     }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let date = dates[indexPath.row]
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -66,7 +67,7 @@ class IDDateTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: IDTableViewCell = IDTableViewCell()
         
         if self.entityName == "Holiday" {
