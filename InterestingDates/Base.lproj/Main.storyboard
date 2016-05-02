@@ -118,7 +118,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cigars" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hgn-Si-vzU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cigars" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hgn-Si-vzU">
                                 <rect key="frame" x="180" y="122" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="oHz-iQ-u7f"/>
@@ -181,11 +181,20 @@
                                     </mask>
                                 </variation>
                             </button>
+                            <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="emm-d1-ACI">
+                                <rect key="frame" x="20" y="238" width="560" height="313"/>
+                                <date key="date" timeIntervalSinceReferenceDate="483906714.68839699">
+                                    <!--2016-05-02 18:31:54 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="en_US"/>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aqz-rW-Fqf" firstAttribute="width" secondItem="Lre-GS-BG3" secondAttribute="width" multiplier="0.5" id="1sj-fH-fmY"/>
+                            <constraint firstItem="emm-d1-ACI" firstAttribute="leading" secondItem="Lre-GS-BG3" secondAttribute="leadingMargin" id="29n-xa-s8W"/>
                             <constraint firstItem="Hgn-Si-vzU" firstAttribute="centerX" secondItem="Lre-GS-BG3" secondAttribute="centerX" multiplier="1.1" id="3kJ-jh-IRA"/>
+                            <constraint firstItem="emm-d1-ACI" firstAttribute="top" secondItem="aqz-rW-Fqf" secondAttribute="bottom" constant="10" id="5Tc-8O-F5c"/>
                             <constraint firstItem="g0Z-cE-r5w" firstAttribute="leading" secondItem="mME-BQ-kOd" secondAttribute="trailing" constant="10" id="68c-ch-EEC"/>
                             <constraint firstItem="mME-BQ-kOd" firstAttribute="centerY" secondItem="g0Z-cE-r5w" secondAttribute="centerY" id="9sv-pt-lld"/>
                             <constraint firstItem="TLA-qb-8ON" firstAttribute="centerY" secondItem="Hgn-Si-vzU" secondAttribute="centerY" id="C1Y-wl-q8m"/>
@@ -199,6 +208,7 @@
                             <constraint firstItem="g0Z-cE-r5w" firstAttribute="top" secondItem="Hgn-Si-vzU" secondAttribute="bottom" constant="8" id="WSx-Pj-MVt"/>
                             <constraint firstItem="Hgn-Si-vzU" firstAttribute="width" secondItem="Lre-GS-BG3" secondAttribute="width" multiplier="0.5" id="WqQ-tm-BRy"/>
                             <constraint firstItem="XFb-5V-zCc" firstAttribute="leading" secondItem="Lre-GS-BG3" secondAttribute="leadingMargin" id="WqV-Ea-4Le"/>
+                            <constraint firstItem="buD-Kr-hdA" firstAttribute="top" secondItem="emm-d1-ACI" secondAttribute="bottom" id="ZAE-gS-Lwn"/>
                             <constraint firstItem="Hgn-Si-vzU" firstAttribute="leading" secondItem="TLA-qb-8ON" secondAttribute="trailing" constant="10" id="eAz-wF-Uyh"/>
                             <constraint firstItem="g0Z-cE-r5w" firstAttribute="centerX" secondItem="Lre-GS-BG3" secondAttribute="centerX" multiplier="1.1" id="fFt-c7-JHZ"/>
                             <constraint firstItem="n1i-Kd-9gM" firstAttribute="centerX" secondItem="Lre-GS-BG3" secondAttribute="centerX" multiplier="1.1" id="mFw-ep-REI"/>
@@ -208,6 +218,7 @@
                             <constraint firstItem="n1i-Kd-9gM" firstAttribute="leading" secondItem="PBJ-hf-oY3" secondAttribute="trailing" constant="10" id="qjQ-gZ-QWo"/>
                             <constraint firstItem="g0Z-cE-r5w" firstAttribute="width" secondItem="Lre-GS-BG3" secondAttribute="width" multiplier="0.5" id="vwQ-Na-kEC"/>
                             <constraint firstItem="XFb-5V-zCc" firstAttribute="centerY" secondItem="aqz-rW-Fqf" secondAttribute="centerY" id="w82-QN-qq9"/>
+                            <constraint firstItem="emm-d1-ACI" firstAttribute="trailing" secondItem="Lre-GS-BG3" secondAttribute="trailingMargin" id="wPY-R6-c0Q"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Birthday" id="zLe-cw-aQW">
@@ -404,6 +415,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eoc-d8-VIK">
+                                <rect key="frame" x="20" y="238" width="560" height="313"/>
+                                <date key="date" timeIntervalSinceReferenceDate="483906496.644656">
+                                    <!--2016-05-02 18:28:16 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="en_US"/>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -411,7 +429,10 @@
                             <constraint firstItem="Xat-Qs-K8T" firstAttribute="leading" secondItem="hYa-AO-TiT" secondAttribute="leadingMargin" id="6xS-ej-HpY"/>
                             <constraint firstItem="Xat-Qs-K8T" firstAttribute="centerY" secondItem="VPR-CF-nZy" secondAttribute="centerY" id="BKt-Gw-zWr"/>
                             <constraint firstItem="dCl-nm-92l" firstAttribute="top" secondItem="VPR-CF-nZy" secondAttribute="bottom" constant="8" id="Hiq-8E-vdl"/>
+                            <constraint firstItem="q1F-78-Ckt" firstAttribute="top" secondItem="eoc-d8-VIK" secondAttribute="bottom" id="Hl7-z1-Apl"/>
                             <constraint firstItem="dCl-nm-92l" firstAttribute="centerX" secondItem="hYa-AO-TiT" secondAttribute="centerX" multiplier="1.1" id="I3e-Sf-jNk"/>
+                            <constraint firstItem="eoc-d8-VIK" firstAttribute="leading" secondItem="hYa-AO-TiT" secondAttribute="leadingMargin" id="IHK-Tc-98H"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eoc-d8-VIK" secondAttribute="trailing" id="Ioi-Wd-4te"/>
                             <constraint firstItem="CaU-S5-izh" firstAttribute="leading" secondItem="hYa-AO-TiT" secondAttribute="leadingMargin" id="PyI-vy-cep"/>
                             <constraint firstItem="NVa-CF-ECz" firstAttribute="centerX" secondItem="hYa-AO-TiT" secondAttribute="centerX" multiplier="1.1" id="Q8Q-tx-H1s"/>
                             <constraint firstItem="ft4-WB-Arr" firstAttribute="leading" secondItem="hYa-AO-TiT" secondAttribute="leadingMargin" id="QsP-VG-Ymt"/>
@@ -426,6 +447,7 @@
                             <constraint firstItem="VPR-CF-nZy" firstAttribute="centerX" secondItem="hYa-AO-TiT" secondAttribute="centerX" multiplier="1.1" id="iIL-dy-Rfk"/>
                             <constraint firstItem="dCl-nm-92l" firstAttribute="width" secondItem="hYa-AO-TiT" secondAttribute="width" multiplier="0.5" id="nWx-2J-jYl"/>
                             <constraint firstItem="FOb-pt-L3s" firstAttribute="width" secondItem="hYa-AO-TiT" secondAttribute="width" multiplier="0.5" id="o5j-be-sMz"/>
+                            <constraint firstItem="eoc-d8-VIK" firstAttribute="top" secondItem="NVa-CF-ECz" secondAttribute="bottom" constant="10" id="og7-eG-ZhS"/>
                             <constraint firstItem="VPR-CF-nZy" firstAttribute="top" secondItem="FOb-pt-L3s" secondAttribute="bottom" constant="8" id="tfr-OE-41O"/>
                             <constraint firstItem="dCl-nm-92l" firstAttribute="leading" secondItem="rXH-MM-eJR" secondAttribute="trailing" constant="10" id="uTV-WH-iDR"/>
                             <constraint firstItem="FOb-pt-L3s" firstAttribute="top" secondItem="b6D-mW-LX9" secondAttribute="bottom" constant="20" id="xNY-Pi-o6R"/>
@@ -434,6 +456,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Holiday" id="2ZL-HL-LXR">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="T3B-1o-B6m"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="HNT-eB-pXe"/>
                     </navigationItem>
                 </viewController>
