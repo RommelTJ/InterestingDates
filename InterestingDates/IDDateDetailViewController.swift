@@ -9,6 +9,7 @@
 import UIKit
 
 class IDDateDetailViewController: UIViewController {
+    @IBOutlet weak var dateTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
