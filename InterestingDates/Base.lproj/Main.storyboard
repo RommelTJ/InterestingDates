@@ -181,7 +181,7 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="emm-d1-ACI">
+                            <datePicker hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="emm-d1-ACI">
                                 <rect key="frame" x="20" y="238" width="560" height="313"/>
                                 <date key="date" timeIntervalSinceReferenceDate="483906714.68839699">
                                     <!--2016-05-02 18:31:54 +0000-->
@@ -222,9 +222,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Birthday" id="zLe-cw-aQW">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="R98-fO-k5s"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="R98-fO-k5s">
+                            <connections>
+                                <action selector="cancelAddDate:" destination="pUg-Py-mCW" id="Yqn-qv-rXB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="yUn-ER-5ya"/>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="entityName" value="Birthday"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3wq-oS-hdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -408,6 +415,9 @@
                                         <exclude reference="UiQ-wX-DCx"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="setADate:" destination="na5-ax-iAe" eventType="touchUpInside" id="sV1-HY-XUp"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ft4-WB-Arr">
                                 <rect key="frame" x="20" y="88" width="150" height="21"/>
@@ -415,7 +425,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eoc-d8-VIK">
+                            <datePicker hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eoc-d8-VIK">
                                 <rect key="frame" x="20" y="238" width="560" height="313"/>
                                 <date key="date" timeIntervalSinceReferenceDate="483906496.644656">
                                     <!--2016-05-02 18:28:16 +0000-->
@@ -456,9 +466,26 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Holiday" id="2ZL-HL-LXR">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="T3B-1o-B6m"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HNT-eB-pXe"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="T3B-1o-B6m">
+                            <connections>
+                                <action selector="cancelAddDate:" destination="na5-ax-iAe" id="sgb-XP-dQV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HNT-eB-pXe">
+                            <connections>
+                                <action selector="saveDate:" destination="na5-ax-iAe" id="jBV-Ic-ZUt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="entityName" value="Holiday"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="datePicker" destination="eoc-d8-VIK" id="pNW-TQ-fIr"/>
+                        <outlet property="nameTextField" destination="FOb-pt-L3s" id="0qC-UV-qsz"/>
+                        <outlet property="option1TextField" destination="VPR-CF-nZy" id="5QN-sI-PAC"/>
+                        <outlet property="option2TextField" destination="dCl-nm-92l" id="Kf3-5K-3wE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39Q-e4-nKB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -618,6 +645,6 @@
         <image name="Holidays" width="26" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hjR-5D-4jU"/>
+        <segue reference="VRL-YO-NqF"/>
     </inferredMetricsTieBreakers>
 </document>
